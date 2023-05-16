@@ -179,11 +179,11 @@ def lotest():
             "paddingAll": "0px"
         }
         }
-    print(FLEXGTTO)
+    #print(FLEXGTTO)
     return FLEXGTTO
 
 
-lotest()
+
 # cmd = "ตรวจหวย 884495"
 # mlottox = re.search(r"\d{6}",cmd)
 # if mlottox:
