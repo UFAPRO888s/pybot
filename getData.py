@@ -88,8 +88,7 @@ def lotest():
                     "type": "text",
                     "text": ""+responseXX['THREE_UP'],
                     "size": "4xl",
-                    "weight": "bold",
-                    "style": "italic"
+                    "weight": "bold"
                 }
                 ],
                 "position": "absolute",
