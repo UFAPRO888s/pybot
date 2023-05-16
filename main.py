@@ -102,7 +102,6 @@ def sendFlexVideo(to, videoUrl, thumbnail):
 
 #LOTTOALLDATA = getDDD()
 #print(LOTTOALLDATA['DD'],LOTTOALLDATA['SS'])
-
 def STARTF():
     sentFtog = setting['groupLotto']
     for xx in sentFtog:
@@ -117,7 +116,7 @@ def SENDLATTE_THAIFLEX():
     sentFtog = setting['groupLotto']
     for xx in sentFtog:
         sendFlex(xx, "ประกาศผลหวย", glotto())
-        
+
 def Oup(op):
     try:
         if op.type == 0:
