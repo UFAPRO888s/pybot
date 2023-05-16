@@ -204,10 +204,10 @@ def Oup(op):
                         sendFlex(to, "LIST LOTTO MENU", result)
 
                     if cmd == "lotto":
-                        STARTF()
+                        sendFlex(to, "ประกาศผลหวย", lottoFlexAll())
                     
                     if cmd == "lothai":
-                        SENDLATTE_THAIFLEX()
+                        sendFlex(to, "ประกาศผลหวย", glotto())
                     
                     if cmd == ".img":
                         imgurl = "https://tang.huaynaka.com/img/ng-104.e3060e54.png"
