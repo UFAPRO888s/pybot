@@ -175,6 +175,7 @@ def lotest():
                 "offsetStart": "265px"
             }
             ],
+             "position": "relative",
             "paddingAll": "0px"
         }
         }
