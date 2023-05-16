@@ -2,13 +2,12 @@
     "adders": true,
     "addmsg": "CHANGYED",
     "blacklist": [
-        "uf886229f476f69559711c41e3dbbfe9b"
+        ""
     ],
     "gname": {
         "c0e4184a6bd0fc0d24552ef578a70819c": "LINE"
     },
     "groupLotto": [
-       
        "ceeb734156eec4672b42c880ef9b76ef7"
     ],
     "join": true,
