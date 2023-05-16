@@ -6,7 +6,7 @@ from Naked.toolshed.shell import execute_js
 from threading import Thread, active_count
 import json,traceback,requests,re,ast,time,random,shutil
 from random import randint
-from getData import lottoFlex,lottoFlexAll
+from getData import lottoFlex,lottoFlexAll,glotto
 login = json.loads(open('Data/token3.json','r').read())
 setting = json.loads(open('Data/settings.json','r').read())
 
@@ -112,7 +112,12 @@ def SENDFLEX(typelotto):
     sentFtog = setting['groupLotto']
     for xx in sentFtog:
         sendFlex(xx, "ประกาศผลหวย", lottoFlex(typelotto))
- 
+        
+def SENDLATTE_THAIFLEX(lottola):
+    sentFtog = setting['groupLotto']
+    for xx in sentFtog:
+        sendFlex(xx, "ประกาศผลหวย", glotto(lottola))
+        
 def Oup(op):
     try:
         if op.type == 0:
@@ -341,7 +346,10 @@ def Oup(op):
 
                     if nook.startswith("flex: "):
                         datatypelotto = nook.strip().split("flex: ")[1]
-                        SENDFLEX(datatypelotto)
+                        if datatypelotto == "LATTE_THAI":
+                           SENDLATTE_THAIFLEX(datatypelotto) 
+                        else:
+                           SENDFLEX(datatypelotto)
                         #print(lotdada)
                     
                     if nook.startswith(".getsq"):
