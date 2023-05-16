@@ -206,6 +206,9 @@ def Oup(op):
                     if cmd == "lotto":
                         STARTF()
                     
+                    if cmd == "lothai":
+                        SENDLATTE_THAIFLEX()
+                    
                     if cmd == ".img":
                         imgurl = "https://tang.huaynaka.com/img/ng-104.e3060e54.png"
                         sendFlexImage(to, imgurl)
