@@ -1,0 +1,39 @@
+{
+    "adders": true,
+    "addmsg": "CHANGYED",
+    "blacklist": [
+        "uf886229f476f69559711c41e3dbbfe9b"
+    ],
+    "gname": {
+        "c0e4184a6bd0fc0d24552ef578a70819c": "LINE"
+    },
+    "groupLotto": [
+        "ceeb734156eec4672b42c880ef9b76ef7"
+    ],
+    "join": true,
+    "keykick": "k",
+    "leave": false,
+    "leavemsg": "",
+    "main": "api.pnckdevapp.com",
+    "maker": [
+        "ued7545af3e0c0a348a18832777b9cee2",
+        "u0b499ce24e07b16ec12f8d0ba3ef8438"
+    ],
+    "notMast": "https://i.imgur.com/sbPNqcs.gif",
+    "official": "u0b499ce24e07b16ec12f8d0ba3ef8438",
+    "proMax": {
+        "c0e4184a6bd0fc0d24552ef578a70819c": true
+    },
+    "proTeamX": {},
+    "rname": "Default",
+    "setKey": {
+        "key": ".",
+        "status": true
+    },
+    "target": {},
+    "ticket": false,
+    "welcome": {},
+    "welcomsg": {},
+    "whitelist": [],
+    "winvite": true
+}

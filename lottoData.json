@@ -1,0 +1,97 @@
+{
+    "LATTE_THAI_BAAC":{
+        "lottotype": "LATTE_THAI_BAAC",
+        "lottoimg": "https://huaynaka.com/wp-content/uploads/2022/03/BOX_06_%E0%B8%98%E0%B8%81%E0%B8%AA.png",
+        "lottoname": "สลากธกส"
+    },
+    "LATTE_THAI_GSB":{
+        "lottotype": "LATTE_THAI_GSB",
+        "lottoimg": "https://huaynaka.com/wp-content/uploads/2022/03/BOX_06_%E0%B8%AD%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%B4%E0%B8%99.png",
+        "lottoname": "สลากออมสิน"
+    },
+    "LATTE_THAI_R":{
+        "lottotype": "LATTE_THAI",
+        "lottoimg": "https://huaynaka.com/wp-content/uploads/2022/03/BOX_06_%E0%B8%A3%E0%B8%B1%E0%B8%90%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%84%E0%B8%97%E0%B8%A2.png",
+        "lottoname": "รัฐบาล"
+    },
+    "STOCK_FOREIGN_DAX":{
+        "lottotype": "STOCK_FOREIGN_DAX",
+        "lottoimg": "https://tang.huaynaka.com/img/de.3e726c2b.svg",
+        "lottoname": "หุ้นเยอรมัน"
+    },
+    "STOCK_FOREIGN_DOWJONES":{
+        "lottotype": "STOCK_FOREIGN_DOWJONES",
+        "lottoimg": "https://tang.huaynaka.com/img/us.ae656592.svg",
+        "lottoname": "หุ้นดาวโจนส์"
+    },
+    "STOCK_FOREIGN_EGX":{
+        "lottotype": "STOCK_FOREIGN_EGX",
+        "lottoimg": "https://tang.huaynaka.com/img/eg.6b83ab95.svg",
+        "lottoname": "หุ้นอียิปต์"
+    },
+    "STOCK_FOREIGN_FTSE":{
+        "lottotype": "STOCK_FOREIGN_FTSE",
+        "lottoimg": "https://tang.huaynaka.com/img/gb.d3ddd602.svg",
+        "lottoname": "หุ้นอังกฤษ"
+    },
+    "STOCK_FOREIGN_HANGSENG_AFTERNOON":{
+        "lottotype": "STOCK_FOREIGN_HANGSENG_AFTERNOON",
+        "lottoimg": "https://tang.huaynaka.com/img/hk.06803e0e.svg",
+        "lottoname": "หุ้นฮั่งเส็ง บ่าย"
+    },
+    "STOCK_FOREIGN_HANGSENG_MORNING":{
+        "lottotype": "STOCK_FOREIGN_HANGSENG_MORNING",
+        "lottoimg": "https://tang.huaynaka.com/img/hk.06803e0e.svg",
+        "lottoname": "หุ้นฮั่งเส็ง เช้า"
+    },
+    "STOCK_FOREIGN_KOSPI":{
+        "lottotype": "STOCK_FOREIGN_KOSPI",
+        "lottoimg": "https://tang.huaynaka.com/img/kr.eb55e63b.svg",
+        "lottoname": "หุ้นเกาหลี"
+    },
+    "STOCK_FOREIGN_MOEX":{
+        "lottotype": "STOCK_FOREIGN_MOEX",
+        "lottoimg": "https://tang.huaynaka.com/img/ru.0cacf46e.svg",
+        "lottoname": "หุ้นรัสเซีย"
+    },
+    "STOCK_FOREIGN_NIKKEI_AFTERNOON":{
+        "lottotype": "STOCK_FOREIGN_NIKKEI_AFTERNOON",
+        "lottoimg": "https://tang.huaynaka.com/img/jp.99bcc1d7.svg",
+        "lottoname": "หุ้นนิเคอิ บ่าย"
+    },
+    "STOCK_FOREIGN_NIKKEI_MORNING":{
+        "lottotype": "STOCK_FOREIGN_NIKKEI_MORNING",
+        "lottoimg": "https://tang.huaynaka.com/img/jp.99bcc1d7.svg",
+        "lottoname": "หุ้นนิเคอิ เช้า"
+    },
+    "STOCK_FOREIGN_SENSEX":{
+        "lottotype": "STOCK_FOREIGN_SENSEX",
+        "lottoimg": "https://tang.huaynaka.com/img/in.e4ab7bd0.svg",
+        "lottoname": "หุ้นอินเดีย"
+    },
+    "STOCK_FOREIGN_STI":{
+        "lottotype": "STOCK_FOREIGN_STI",
+        "lottoimg": "https://tang.huaynaka.com/img/sg.199f925b.svg",
+        "lottoname": "หุ้นสิงคโปร์"
+    },
+    "STOCK_FOREIGN_SZSE_AFTERNOON":{
+        "lottotype": "STOCK_FOREIGN_SZSE_AFTERNOON",
+        "lottoimg": "https://tang.huaynaka.com/img/cn.02c229de.svg",
+        "lottoname": "หุ้นจีน บ่าย"
+    },
+    "STOCK_FOREIGN_SZSE_MORNING":{
+        "lottotype": "STOCK_FOREIGN_SZSE_MORNING",
+        "lottoimg": "https://tang.huaynaka.com/img/cn.02c229de.svg",
+        "lottoname": "หุ้นจีน เช้า"
+    },
+    "STOCK_FOREIGN_TWSE":{
+        "lottotype": "STOCK_FOREIGN_TWSE",
+        "lottoimg": "https://tang.huaynaka.com/img/hk.06803e0e.svg",
+        "lottoname": "หุ้นไต้หวัน"
+    },
+    "STOCK_THAI_EVENING":{
+        "lottotype": "STOCK_THAI_EVENING",
+        "lottoimg": "https://tang.huaynaka.com/img/th.76fca72f.svg",
+        "lottoname": "หุ้นไทย เย็น"
+    }
+}
