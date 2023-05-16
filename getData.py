@@ -67,13 +67,11 @@ def lotest():
     responseXX = requests.get('https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/nakalottolatest/0.json').json()
     #responseX = [p for p in responseXX.json() if p['THREE_UP'] != "-" and p['THREE_UP'] != "undefined" and p['sub_type'] == "LATTE_THAI"]
     FLEXGTTO={
-  "type": "bubble",
-  "size": "giga",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
@@ -82,111 +80,252 @@ def lotest():
             "url": "https://i.imgur.com/JidEhZp.png",
             "size": "full",
             "aspectMode": "cover",
-            "aspectRatio": "100:106",
-            "position": "relative"
-          }
-        ],
-        "position": "relative"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
+            "aspectRatio": "100:105",
+            "gravity": "top"
+          },
           {
-            "type": "text",
-            "text": ""+responseXX['THREE_UP'],
-            "size": "4xl",
-            "weight": "bold"
-          }
-        ],
-        "offsetTop": "220px",
-        "offsetStart": "45px",
-        "position": "absolute"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": ""+responseXX['THREE_UP'],
+                    "size": "3xl",
+                    "weight": "bold"
+                  }
+                ],
+                "paddingStart": "20px",
+                "paddingTop": "10px"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": ""+responseXX['TWO_DOWN'],
+                        "size": "xxl",
+                        "weight": "bold",
+                        "color": "#FFFFFF"
+                      },
+                      {
+                        "type": "text",
+                        "text": ""+responseXX['TWO_UP'],
+                        "size": "xxl",
+                        "weight": "bold"
+                      }
+                    ],
+                    "paddingStart": "15px",
+                    "flex": 0
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": ""+responseXX['THREE_PRE_X'],
+                        "size": "xxl",
+                        "weight": "bold",
+                        "color": "#FFFFFF"
+                      },
+                      {
+                        "type": "text",
+                        "text": ""+responseXX['THREE_PRE_Y'],
+                        "size": "xxl",
+                        "weight": "bold"
+                      }
+                    ],
+                    "flex": 0,
+                    "paddingStart": "45px"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": ""+responseXX['THREE_PRE_Z'],
+                        "size": "4xl",
+                        "weight": "bold",
+                        "flex": 0
+                      }
+                    ],
+                    "flex": 0,
+                    "paddingStart": "35px",
+                    "paddingTop": "10px"
+                  }
+                ],
+                "paddingTop": "3px"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingStart": "20px",
+            "paddingEnd": "20px",
+            "offsetTop": "160px"
+          },
           {
-            "type": "text",
-            "text": ""+responseXX['TWO_DOWN'],
-            "color": "#FFFFFF",
-            "size": "3xl",
-            "weight": "bold"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "วันอังคารที่ 16 พฤษภาคม 2566",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "xs",
+                "offsetTop": "3px",
+                "weight": "bold"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "5px",
+            "offsetTop": "100px",
+            "backgroundColor": "#ff334b",
+            "offsetStart": "20px",
+            "height": "25px",
+            "paddingStart": "5px",
+            "paddingEnd": "5px"
           }
         ],
-        "position": "absolute",
-        "offsetTop": "290px",
-        "offsetStart": "50px"
+        "paddingAll": "0px"
       },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": ""+responseXX['TWO_UP'],
-            "size": "3xl",
-            "weight": "bold"
-          }
-        ],
-        "position": "absolute",
-        "offsetTop": "340px",
-        "offsetStart": "50px"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": ""+responseXX['THREE_PRE_X'],
-            "color": "#FFFFFF",
-            "size": "3xl",
-            "weight": "bold"
-          }
-        ],
-        "position": "absolute",
-        "offsetTop": "290px",
-        "offsetStart": "165px"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": ""+responseXX['THREE_PRE_Y'],
-            "size": "3xl",
-            "weight": "bold"
-          }
-        ],
-        "position": "absolute",
-        "offsetTop": "340px",
-        "offsetStart": "165px",
-        "spacing": "none",
-        "margin": "none"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": ""+responseXX['THREE_PRE_Z'],
-            "size": "5xl",
-            "weight": "bold"
-          }
-        ],
-        "position": "absolute",
-        "offsetTop": "298px",
-        "offsetStart": "265px"
-      }
-    ],
-    "paddingAll": "0px"
-  }
+      "size": "mega"
+    }
+  ]
 }
-    #print(FLEXGTTO)
+    # FLEXGTTO={
+    #     "type": "bubble",
+    #     "size": "giga",
+    #     "body": {
+    #         "type": "box",
+    #         "layout": "vertical",
+    #         "contents": [
+    #         {
+    #             "type": "box",
+    #             "layout": "vertical",
+    #             "contents": [
+    #             {
+    #                 "type": "image",
+    #                 "url": "https://i.imgur.com/JidEhZp.png",
+    #                 "size": "full",
+    #                 "aspectMode": "cover",
+    #                 "aspectRatio": "100:106",
+    #                 "position": "relative"
+    #             }
+    #             ],
+    #             "position": "relative"
+    #         },
+    #         {
+    #             "type": "box",
+    #             "layout": "vertical",
+    #             "contents": [
+    #             {
+    #                 "type": "text",
+    #                 "text": ""+responseXX['THREE_UP'],
+    #                 "size": "4xl",
+    #                 "weight": "bold"
+    #             }
+    #             ],
+    #             "offsetTop": "220px",
+    #             "offsetStart": "45px",
+    #             "position": "absolute"
+    #         },
+    #         {
+    #             "type": "box",
+    #             "layout": "vertical",
+    #             "contents": [
+    #             {
+    #                 "type": "text",
+    #                 "text": ""+responseXX['TWO_DOWN'],
+    #                 "color": "#FFFFFF",
+    #                 "size": "3xl",
+    #                 "weight": "bold"
+    #             }
+    #             ],
+    #             "position": "absolute",
+    #             "offsetTop": "290px",
+    #             "offsetStart": "50px"
+    #         },
+    #         {
+    #             "type": "box",
+    #             "layout": "vertical",
+    #             "contents": [
+    #             {
+    #                 "type": "text",
+    #                 "text": ""+responseXX['TWO_UP'],
+    #                 "size": "3xl",
+    #                 "weight": "bold"
+    #             }
+    #             ],
+    #             "position": "absolute",
+    #             "offsetTop": "340px",
+    #             "offsetStart": "50px"
+    #         },
+    #         {
+    #             "type": "box",
+    #             "layout": "vertical",
+    #             "contents": [
+    #             {
+    #                 "type": "text",
+    #                 "text": ""+responseXX['THREE_PRE_X'],
+    #                 "color": "#FFFFFF",
+    #                 "size": "3xl",
+    #                 "weight": "bold"
+    #             }
+    #             ],
+    #             "position": "absolute",
+    #             "offsetTop": "290px",
+    #             "offsetStart": "165px"
+    #         },
+    #         {
+    #             "type": "box",
+    #             "layout": "vertical",
+    #             "contents": [
+    #             {
+    #                 "type": "text",
+    #                 "text": ""+responseXX['THREE_PRE_Y'],
+    #                 "size": "3xl",
+    #                 "weight": "bold"
+    #             }
+    #             ],
+    #             "position": "absolute",
+    #             "offsetTop": "340px",
+    #             "offsetStart": "165px",
+    #             "spacing": "none",
+    #             "margin": "none"
+    #         },
+    #         {
+    #             "type": "box",
+    #             "layout": "vertical",
+    #             "contents": [
+    #             {
+    #                 "type": "text",
+    #                 "text": ""+responseXX['THREE_PRE_Z'],
+    #                 "size": "5xl",
+    #                 "weight": "bold"
+    #             }
+    #             ],
+    #             "position": "absolute",
+    #             "offsetTop": "298px",
+    #             "offsetStart": "265px"
+    #         }
+    #         ],
+    #         "paddingAll": "0px"
+    #     }
+    #     }
+
     return FLEXGTTO
 
 

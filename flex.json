@@ -1,0 +1,127 @@
+{
+    "type": "bubble",
+    "size": "giga",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "image",
+              "url": "https://i.imgur.com/JidEhZp.png",
+              "size": "full",
+              "aspectMode": "cover",
+              "aspectRatio": "100:106",
+              "position": "relative"
+            }
+          ],
+          "position": "relative"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [],
+          "height": "100px",
+          "position": "absolute"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "443",
+              "size": "4xl",
+              "weight": "bold"
+            }
+          ],
+          "offsetTop": "220px",
+          "offsetStart": "45px",
+          "position": "absolute"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "533",
+              "color": "#FFFFFF",
+              "size": "3xl",
+              "weight": "bold"
+            }
+          ],
+          "position": "absolute",
+          "offsetTop": "290px",
+          "offsetStart": "50px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "643",
+              "size": "3xl",
+              "weight": "bold"
+            }
+          ],
+          "position": "absolute",
+          "offsetTop": "340px",
+          "offsetStart": "50px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "432",
+              "color": "#FFFFFF",
+              "size": "3xl",
+              "weight": "bold"
+            }
+          ],
+          "position": "absolute",
+          "offsetTop": "290px",
+          "offsetStart": "165px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "222",
+              "size": "3xl",
+              "weight": "bold"
+            }
+          ],
+          "position": "absolute",
+          "offsetTop": "340px",
+          "offsetStart": "165px",
+          "spacing": "none",
+          "margin": "none"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "111",
+              "size": "5xl",
+              "weight": "bold"
+            }
+          ],
+          "position": "absolute",
+          "offsetTop": "298px",
+          "offsetStart": "265px"
+        }
+      ],
+      "paddingAll": "0px"
+    }
+  }
