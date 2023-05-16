@@ -51,10 +51,10 @@ def lottoFlexAll():
 
 def glotto():
     
-    responseX = requests.get('https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/nakalottolatest.json').json()
+    responseXX = requests.get('https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/nakalottolatest.json')
     #responseX3 = requests.get('https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/lottoX3.json').json()
     #print(responseX,responseX3[0]['number'][0])
-    #print(responseX)
+    responseX = [p for p in responseXX.json() if p['THREE_UP'] != "-" and p['THREE_UP'] != "undefined" and p['sub_type'] == "LATTE_THAI"]
     FLEXGLOTTO={
             "type": "bubble",
             "size": "giga",
@@ -89,7 +89,7 @@ def glotto():
                     },
                     {
                         "type": "text",
-                        "text": ""+responseX['announce_datetime_th'],
+                        "text": ""+responseX[0]['announce_datetime_th'],
                         "align": "center",
                         "size": "lg",
                         "weight": "bold"
@@ -104,7 +104,7 @@ def glotto():
                             "contents": [
                             {
                                 "type": "text",
-                                "text": ""+responseX['THREE_UP'],
+                                "text": ""+responseX[0]['THREE_UP'],
                                 "align": "center",
                                 "size": "4xl",
                                 "weight": "bold"
@@ -130,7 +130,7 @@ def glotto():
                             "contents": [
                             {
                                 "type": "text",
-                                "text": ""+responseX['THREE_PRE_Z'],
+                                "text": ""+responseX[0]['THREE_PRE_Z'],
                                 "align": "center",
                                 "size": "4xl",
                                 "weight": "bold"
@@ -187,7 +187,7 @@ def glotto():
                                     "contents": [
                                     {
                                         "type": "text",
-                                        "text": ""+responseX['TWO_UP'],
+                                        "text": ""+responseX[0]['TWO_UP'],
                                         "weight": "bold",
                                         "align": "center",
                                         "size": "xxl"
@@ -204,7 +204,7 @@ def glotto():
                                     "contents": [
                                     {
                                         "type": "text",
-                                        "text": ""+responseX['TWO_DOWN'],
+                                        "text": ""+responseX[0]['TWO_DOWN'],
                                         "align": "center",
                                         "weight": "bold",
                                         "size": "xxl"
@@ -242,7 +242,7 @@ def glotto():
                                     "contents": [
                                     {
                                         "type": "text",
-                                        "text": ""+responseX['THREE_PRE_X'],
+                                        "text": ""+responseX[0]['THREE_PRE_X'],
                                         "weight": "bold",
                                         "align": "center",
                                         "size": "xxl"
@@ -259,7 +259,7 @@ def glotto():
                                     "contents": [
                                     {
                                         "type": "text",
-                                        "text": ""+responseX['THREE_PRE_Y'],
+                                        "text": ""+responseX[0]['THREE_PRE_Y'],
                                         "align": "center",
                                         "weight": "bold",
                                         "size": "xxl"
@@ -319,9 +319,6 @@ def glotto():
             }
 
     return FLEXGLOTTO
-
-
-
 
 
 #for dataLotto in snapshot:
