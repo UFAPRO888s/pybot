@@ -63,8 +63,127 @@ def lottocheck(cvd):
             return [rxs['name'],filtered]
 
 
+def lotest():
+    responseXX = requests.get('https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/nakalottolatest/0.json').json()
+    #responseX = [p for p in responseXX.json() if p['THREE_UP'] != "-" and p['THREE_UP'] != "undefined" and p['sub_type'] == "LATTE_THAI"]
+    FLEXGTTO={
+        "type": "bubble",
+        "size": "giga",
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+                "type": "image",
+                "url": "https://i.imgur.com/JidEhZp.png",
+                "size": "full",
+                "aspectMode": "cover",
+                "aspectRatio": "100:104"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                {
+                    "type": "text",
+                    "text": ""+responseXX['THREE_UP'],
+                    "size": "4xl",
+                    "weight": "bold",
+                    "style": "italic"
+                }
+                ],
+                "position": "absolute",
+                "offsetTop": "220px",
+                "offsetStart": "45px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                {
+                    "type": "text",
+                    "text": ""+responseXX['TWO_DOWN'],
+                    "color": "#FFFFFF",
+                    "size": "3xl",
+                    "weight": "bold"
+                }
+                ],
+                "position": "absolute",
+                "offsetTop": "287px",
+                "offsetStart": "50px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                {
+                    "type": "text",
+                    "text": ""+responseXX['TWO_UP'],
+                    "size": "3xl",
+                    "weight": "bold"
+                }
+                ],
+                "position": "absolute",
+                "offsetTop": "334px",
+                "offsetStart": "50px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                {
+                    "type": "text",
+                    "text": ""+responseXX['THREE_PRE_X'],
+                    "color": "#FFFFFF",
+                    "size": "3xl",
+                    "weight": "bold"
+                }
+                ],
+                "position": "absolute",
+                "offsetTop": "287px",
+                "offsetStart": "165px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                {
+                    "type": "text",
+                    "text": ""+responseXX['THREE_PRE_Y'],
+                    "size": "3xl",
+                    "weight": "bold"
+                }
+                ],
+                "position": "absolute",
+                "offsetTop": "334px",
+                "offsetStart": "165px",
+                "spacing": "none",
+                "margin": "none"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                {
+                    "type": "text",
+                    "text": ""+responseXX['THREE_PRE_Z'],
+                    "size": "5xl",
+                    "weight": "bold"
+                }
+                ],
+                "position": "absolute",
+                "offsetTop": "290px",
+                "offsetStart": "265px"
+            }
+            ],
+            "paddingAll": "0px"
+        }
+        }
+    print(FLEXGTTO)
+    return FLEXGTTO
 
 
+lotest()
 # cmd = "ตรวจหวย 884495"
 # mlottox = re.search(r"\d{6}",cmd)
 # if mlottox:

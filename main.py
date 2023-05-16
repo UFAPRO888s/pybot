@@ -6,7 +6,7 @@ from Naked.toolshed.shell import execute_js
 from threading import Thread, active_count
 import json,traceback,requests,re,ast,time,random,shutil
 from random import randint
-from getData import lottoFlex,lottoFlexAll,glotto,lottocheck
+from getData import lottoFlex,lottoFlexAll,glotto,lottocheck,lotest
 login = json.loads(open('Data/token3.json','r').read())
 setting = json.loads(open('Data/settings.json','r').read())
 
@@ -208,6 +208,9 @@ def Oup(op):
                     
                     if cmd == "lothai":
                         sendFlex(to, "ประกาศผลหวย", glotto())
+                        
+                    if cmd == "tsk":
+                        sendFlex(to, "ประกาศผลหวย", lotest())
                     
                     if cmd == ".img":
                         imgurl = "https://tang.huaynaka.com/img/ng-104.e3060e54.png"
