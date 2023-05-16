@@ -113,10 +113,10 @@ def SENDFLEX(typelotto):
     for xx in sentFtog:
         sendFlex(xx, "ประกาศผลหวย", lottoFlex(typelotto))
         
-def SENDLATTE_THAIFLEX(lottola):
+def SENDLATTE_THAIFLEX():
     sentFtog = setting['groupLotto']
     for xx in sentFtog:
-        sendFlex(xx, "ประกาศผลหวย", glotto(lottola))
+        sendFlex(xx, "ประกาศผลหวย", glotto())
         
 def Oup(op):
     try:
@@ -198,7 +198,6 @@ def Oup(op):
                             ret_ += "\n\n「 รวม {} ท่าน 」\n𝙋𝙀𝙍𝙁𝙊𝙍𝙈𝘼𝙉𝘾𝙀 𝘽𝙔 𝙉𝙊𝙊𝙆𝘿𝙀𝙑".format(str(len(dataMid)))
                             client.sendMention(to, ret_, dataMid)
 
-                    
                     if cmd == "help":
                         contact = client.getContact(sender)
                         name = contact.displayName
@@ -207,11 +206,6 @@ def Oup(op):
 
                     if cmd == "lotto":
                         STARTF()
-                        # label = "รายการหวย"
-                        # data = ""
-                        # data += "\n🔴 รายการ"
-                        # datax = {"type":"bubble","size":"kilo","body":{"type":"box","layout":"vertical","backgroundColor":"#0f0f0f","contents":[{"type":"box","layout":"vertical","contents":[{"type":"text","text":"ตั้งค่า","color":"#FFC300","weight":"bold","size":"xxs"}],"position":"absolute","offsetTop":"15px","offsetStart":"15px","borderWidth":"1px","borderColor":"#FFC300","cornerRadius":"50px","paddingStart":"7px","paddingEnd":"7px","paddingTop":"2px","paddingBottom":"2px"},{"type":"box","layout":"vertical","contents":[{"type":"box","layout":"vertical","contents":[{"type":"image","url":"https://tang.huaynaka.com/img/ng-104.e3060e54.png","aspectRatio":"1:1","aspectMode":"cover","action": {"type": "uri","label": "Profile","uri": "line://nv/profilePopup/mid=u0b499ce24e07b16ec12f8d0ba3ef8438"}}],"cornerRadius":"100px"}],"alignItems":"center","paddingTop":"20px"},{"type":"box","layout":"vertical","contents":[{"type":"text","text":label.upper(),"weight":"bold","size":"md","color":"#FFC300"},{"type":"text","text":"CBX-NK-TH","color":"#FFC300cc","size":"xxs"}],"alignItems":"center","paddingTop":"10px"},{"type":"box","layout":"vertical","contents":[{"type":"text","text":data,"color":"#FFC300","size":"xs","wrap":True}],"paddingTop":"15px","paddingBottom":"5px"}],"paddingAll":"10px","paddingStart":"15px","paddingEnd":"15px","paddingBottom":"10px"}}
-                        # sendFlex(to, "LIST LOTTO", datax)
                     
                     if cmd == ".img":
                         imgurl = "https://tang.huaynaka.com/img/ng-104.e3060e54.png"
@@ -263,7 +257,6 @@ def Oup(op):
                             client.sendMessage(to, text=txt, contentMetadata={'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
                             client.sendMessage(to, "จำนวนทั้งหมด {} ID\n𝗣𝗘𝗥𝗙𝗢𝗥𝗠𝗔𝗡𝗖𝗘 𝗕𝗬 𝗡𝗢𝗢𝗞𝗗𝗘𝗩".format(str(len(nama))))
                             
-
                     if cmd.startswith('.ตามมา '):
                         midd = nook.replace(".ตามมา ","")
                         groupTarget = client.getGroup(midd)
@@ -328,7 +321,6 @@ def Oup(op):
                                 json.dump(setting, fp, sort_keys=True, indent=4)
                             client.sendMessage(to,"already disabled.") 
 
-
                     if cmd.startswith(".ticket "):
                         data = cmd.split("ticket ")[1]
                         if data == "on":
@@ -346,11 +338,11 @@ def Oup(op):
 
                     if nook.startswith("flex: "):
                         datatypelotto = nook.strip().split("flex: ")[1]
+                        print(datatypelotto)
                         if datatypelotto == "LATTE_THAI":
-                           SENDLATTE_THAIFLEX(datatypelotto) 
+                           SENDLATTE_THAIFLEX() 
                         else:
                            SENDFLEX(datatypelotto)
-                        #print(lotdada)
                     
                     if nook.startswith(".getsq"):
                         a = client.getJoinedSquares()
@@ -364,9 +356,7 @@ def Oup(op):
                         for i in range(len(squares)):
                             txt2 += str(i+1)+'. '+str(squares[i].invitationURL)+'\n'
                         client.sendMessage(receiver, txt2)
-                        
-                 
-                    
+                             
     except Exception as error:
         print(error)
 
