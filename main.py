@@ -6,7 +6,7 @@ from Naked.toolshed.shell import execute_js
 from threading import Thread, active_count
 import json,traceback,requests,re,ast,time,random,shutil
 from random import randint
-from getData import lottoFlex,lottoFlexAll,glotto
+from getData import lottoFlex,lottoFlexAll,glotto,lottocheck
 login = json.loads(open('Data/token3.json','r').read())
 setting = json.loads(open('Data/settings.json','r').read())
 
@@ -160,7 +160,7 @@ def Oup(op):
                                         setting["winvite"] = False
                                         break
 
-        if op.type == 26 or op.type == 25:
+        if op.type == 26:
             msg = op.message
             nook = msg.text
             print(op)
@@ -346,18 +346,15 @@ def Oup(op):
                         else:
                            SENDFLEX(datatypelotto)
                     
-                    if nook.startswith(".getsq"):
-                        a = client.getJoinedSquares()
-                        squares = a.squares
-                        members = a.members
-                        authorities = a.authorities
-                        statuses = a.statuses
-                        noteStatuses = a.noteStatuses
-                        txt = str(squares)+'\n\n'+str(members)+'\n\n'+str(authorities)+'\n\n'+str(statuses)+'\n\n'+str(noteStatuses)+'\n\n'
-                        txt2 = ''
-                        for i in range(len(squares)):
-                            txt2 += str(i+1)+'. '+str(squares[i].invitationURL)+'\n'
-                        client.sendMessage(receiver, txt2)
+                    mlottox = re.search(r"\d{6}",cmd)
+                    if mlottox:
+                        lottoXS = lottocheck(mlottox.group())
+                        contact = client.getContact(sender)
+                        #print(contact)
+                        if lottoXS:
+                            client.sendMessage(to,"ยินดีกับ "+contact.displayName+" \nถูกหวย "+lottoXS[0]+" เลข "+lottoXS[1]+"\n")
+                        else:
+                            client.sendMessage(to,"ไม่ถูก เอาใหม่นะ "+contact.displayName)
                              
     except Exception as error:
         print(error)

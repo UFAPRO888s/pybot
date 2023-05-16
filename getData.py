@@ -40,7 +40,6 @@ def lottoFlexAll():
     FLEXTI = []
     response = requests.get('https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/nakalottolatest.json')
     filtered_arr = [p for p in response.json() if p['THREE_UP'] != "-" and p['THREE_UP'] != "undefined" and p['sub_type'] != "LATTE_THAI"]
-    #k = len(filtered_arr)//10
     for filtered_arrX in filtered_arr[0:10]:
         #print(filtered_arrX)
         FLEXTIMEXW={"type": "bubble", "size": "mega", "header":{"type": "box", "layout": "vertical", "contents": [{"type": "image", "url": ""+random.choice(poster), "size": "full", "aspectRatio": "100:50", "aspectMode": "cover", "animated": True, "align": "center", "gravity": "center", "margin": "none"}], "spacing": "none", "margin": "none", "offsetStart": "0px", "paddingAll": "0px"}, "body":{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "horizontal", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "image", "url": ""+filtered_arrX['img_fg'], "size": "full", "align": "center", "aspectRatio": "1:1", "aspectMode": "cover"}], "cornerRadius": "100px", "width": "50px", "borderWidth": "1px", "borderColor": "#BD9B51"},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+filtered_arrX['title_th'], "size": "lg", "wrap": True},{"type": "text", "text": filtered_arrX['announce_datetime_th'], "size": "xs", "weight": "bold", "color": "#DB2316cc"}]}], "spacing": "lg", "alignItems": "center"},{"type": "box", "layout": "horizontal", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": "3ตัวบน", "size": "xs", "align": "center", "weight": "bold", "color": "#FFFFFF"}], "backgroundColor": "#A07C00", "paddingAll": "2px", "cornerRadius": "5px", "borderWidth": "1px", "borderColor": "#BD9B51"},{"type": "box", "layout": "vertical", "contents": []},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+filtered_arrX['THREE_UP'], "align": "center", "weight": "bold", "size": "3xl", "gravity": "center"}], "height": "50px", "backgroundColor": "#FFFFFFcc", "cornerRadius": "5px", "justifyContent": "center", "borderWidth": "1px", "borderColor": "#BD9B51"}], "spacing": "xs"},{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": "2ตัวบน", "size": "xs", "align": "center", "weight": "bold", "color": "#FFFFFF"}], "backgroundColor": "#A07C00", "paddingAll": "2px", "cornerRadius": "5px", "borderWidth": "1px", "borderColor": "#BD9B51"},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+filtered_arrX['TWO_UP'], "align": "center", "weight": "bold", "size": "3xl", "gravity": "center"}], "height": "50px", "backgroundColor": "#FFFFFFcc", "cornerRadius": "5px", "justifyContent": "center", "borderWidth": "1px", "borderColor": "#BD9B51"}], "spacing": "sm"},{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": "2ตัวล่าง", "size": "xs", "align": "center", "weight": "bold", "color": "#FFFFFF"}], "backgroundColor": "#A07C00", "paddingAll": "2px", "cornerRadius": "5px", "borderColor": "#BD9B51", "borderWidth": "1px"},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+filtered_arrX['TWO_DOWN'], "align": "center", "weight": "bold", "size": "3xl", "gravity": "center"}], "height": "50px", "backgroundColor": "#FFFFFFcc", "cornerRadius": "5px", "justifyContent": "center", "borderWidth": "1px", "borderColor": "#BD9B51"}], "spacing": "sm"}], "margin": "lg", "spacing": "sm"},{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "image", "url": "https://huaynaga.info/wp-content/uploads/2021/07/banner-naka-250364-allnew_optimized.jpg", "size": "full", "aspectRatio": "100:40", "aspectMode": "cover","action": {"type": "uri","label": "huaynaka","uri": "https://tang.huaynaka.com/agent/r39lPewF"}}], "cornerRadius": "5px", "borderColor": "#BD9B51", "borderWidth": "2px"}], "paddingAll": "0px"}], "paddingAll": "0px", "margin": "lg"}], "background":{"type": "linearGradient", "angle": "120deg", "startColor": "#ECDF8C", "endColor": "#C3AA66", "centerColor": "#ECDF8C"}}, "styles":{"body":{"backgroundColor": "#EBDE8A"}}}
@@ -50,283 +49,27 @@ def lottoFlexAll():
 
 
 def glotto():
-    
     responseXX = requests.get('https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/nakalottolatest.json')
-    #responseX3 = requests.get('https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/lottoX3.json').json()
-    #print(responseX,responseX3[0]['number'][0])
     responseX = [p for p in responseXX.json() if p['THREE_UP'] != "-" and p['THREE_UP'] != "undefined" and p['sub_type'] == "LATTE_THAI"]
-    FLEXGLOTTO={
-            "type": "bubble",
-            "size": "giga",
-            "header": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                {
-                    "type": "image",
-                    "url": "https://huaynaka.com/wp-content/uploads/2021/10/probenner-huaynaka-new.webp",
-                    "size": "full",
-                    "aspectRatio": "100:50",
-                    "aspectMode": "cover"
-                }
-                ],
-                "paddingAll": "0px"
-            },
-            "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                    {
-                        "type": "text",
-                        "text": "ผลหวยรัฐบาล ประจำวันที่",
-                        "size": "sm",
-                        "align": "center",
-                        "weight": "bold"
-                    },
-                    {
-                        "type": "text",
-                        "text": ""+responseX[0]['announce_datetime_th'],
-                        "align": "center",
-                        "size": "lg",
-                        "weight": "bold"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                        {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                            {
-                                "type": "text",
-                                "text": ""+responseX[0]['THREE_UP'],
-                                "align": "center",
-                                "size": "4xl",
-                                "weight": "bold"
-                            },
-                            {
-                                "type": "text",
-                                "text": "รางวัลที่ 1",
-                                "size": "sm",
-                                "weight": "bold",
-                                "align": "center"
-                            }
-                            ],
-                            "backgroundColor": "#FFFFCA",
-                            "flex": 2,
-                            "cornerRadius": "10px",
-                            "spacing": "0px",
-                            "borderColor": "#A48000",
-                            "borderWidth": "2px"
-                        },
-                        {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                            {
-                                "type": "text",
-                                "text": ""+responseX[0]['THREE_PRE_Z'],
-                                "align": "center",
-                                "size": "4xl",
-                                "weight": "bold"
-                            },
-                            {
-                                "type": "text",
-                                "text": "เลขท้าย2ตัว",
-                                "size": "sm",
-                                "weight": "bold",
-                                "align": "center"
-                            }
-                            ],
-                            "flex": 1,
-                            "backgroundColor": "#FFFFCA",
-                            "cornerRadius": "10px",
-                            "spacing": "0px",
-                            "borderColor": "#A48000",
-                            "borderWidth": "2px"
-                        }
-                        ],
-                        "paddingStart": "30px",
-                        "paddingEnd": "30px",
-                        "spacing": "md"
-                    }
-                    ],
-                    "margin": "md",
-                    "spacing": "sm"
-                },
-                {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                    {
-                        "type": "text",
-                        "text": "แทงหวย เว็บหวย นาคา หวยออนไลน์ อัตราจ่ายสูงที่สุด",
-                        "align": "center",
-                        "size": "xs"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                        {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": ""+responseX[0]['TWO_UP'],
-                                        "weight": "bold",
-                                        "align": "center",
-                                        "size": "xxl"
-                                    }
-                                    ],
-                                    "backgroundColor": "#FFFFCA",
-                                    "cornerRadius": "5px",
-                                    "borderWidth": "2px",
-                                    "borderColor": "#A48000"
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": ""+responseX[0]['TWO_DOWN'],
-                                        "align": "center",
-                                        "weight": "bold",
-                                        "size": "xxl"
-                                    }
-                                    ],
-                                    "backgroundColor": "#FFFFCA",
-                                    "cornerRadius": "5px",
-                                    "borderColor": "#A48000",
-                                    "borderWidth": "2px"
-                                }
-                                ],
-                                "spacing": "md"
-                            },
-                            {
-                                "type": "text",
-                                "text": "3ตัวหน้า",
-                                "size": "sm",
-                                "weight": "bold",
-                                "align": "center"
-                            }
-                            ],
-                            "spacing": "md"
-                        },
-                        {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": ""+responseX[0]['THREE_PRE_X'],
-                                        "weight": "bold",
-                                        "align": "center",
-                                        "size": "xxl"
-                                    }
-                                    ],
-                                    "backgroundColor": "#FFFFCA",
-                                    "cornerRadius": "5px",
-                                    "borderColor": "#A48000",
-                                    "borderWidth": "2px"
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": ""+responseX[0]['THREE_PRE_Y'],
-                                        "align": "center",
-                                        "weight": "bold",
-                                        "size": "xxl"
-                                    }
-                                    ],
-                                    "backgroundColor": "#FFFFCA",
-                                    "cornerRadius": "5px",
-                                    "borderColor": "#A48000",
-                                    "borderWidth": "2px"
-                                }
-                                ],
-                                "spacing": "md"
-                            },
-                            {
-                                "type": "text",
-                                "text": "3ตัวหน้า",
-                                "size": "sm",
-                                "weight": "bold",
-                                "align": "center"
-                            }
-                            ],
-                            "spacing": "md"
-                        }
-                        ],
-                        "paddingStart": "30px",
-                        "paddingEnd": "30px",
-                        "spacing": "md"
-                    }
-                    ],
-                    "margin": "lg",
-                    "paddingTop": "10px",
-                    "paddingBottom": "10px"
-                },
-                {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                    {
-                        "type": "image",
-                        "url": "https://huaynaka.com/wp-content/uploads/2021/08/sub-banner-%E0%B8%AB%E0%B8%A7%E0%B8%A2%E0%B8%99%E0%B8%B2%E0%B8%84%E0%B8%B2.webp",
-                        "size": "full",
-                        "aspectRatio": "100:40",
-                        "aspectMode": "cover"
-                    }
-                    ],
-                    "paddingTop": "10px"
-                }
-                ],
-                "paddingAll": "0px",
-                "background": {
-                "type": "linearGradient",
-                "angle": "140deg",
-                "startColor": "#DDC876",
-                "endColor": "#FCF8A3"
-                }
-                }
-            }
-
+    FLEXGLOTTO={"type": "bubble", "size": "giga", "header":{"type": "box", "layout": "vertical", "contents": [{"type": "image", "url": "https://huaynaka.com/wp-content/uploads/2021/10/probenner-huaynaka-new.webp", "size": "full", "aspectRatio": "100:50", "aspectMode": "cover"}], "paddingAll": "0px"}, "body":{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": "ผลหวยรัฐบาล ประจำวันที่", "size": "sm", "align": "center", "weight": "bold"},{"type": "text", "text": ""+responseX[0]['announce_datetime_th'], "align": "center", "size": "lg", "weight": "bold"},{"type": "box", "layout": "horizontal", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseX[0]['THREE_UP'], "align": "center", "size": "4xl", "weight": "bold"},{"type": "text", "text": "รางวัลที่ 1", "size": "sm", "weight": "bold", "align": "center"}], "backgroundColor": "#FFFFCA", "flex": 2, "cornerRadius": "10px", "spacing": "0px", "borderColor": "#A48000", "borderWidth": "2px"},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseX[0]['THREE_PRE_Z'], "align": "center", "size": "4xl", "weight": "bold"},{"type": "text", "text": "เลขท้าย2ตัว", "size": "sm", "weight": "bold", "align": "center"}], "flex": 1, "backgroundColor": "#FFFFCA", "cornerRadius": "10px", "spacing": "0px", "borderColor": "#A48000", "borderWidth": "2px"}], "paddingStart": "30px", "paddingEnd": "30px", "spacing": "md"}], "margin": "md", "spacing": "sm"},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": "แทงหวย เว็บหวย นาคา หวยออนไลน์ อัตราจ่ายสูงที่สุด", "align": "center", "size": "xs"},{"type": "box", "layout": "horizontal", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "horizontal", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseX[0]['TWO_UP'], "weight": "bold", "align": "center", "size": "xxl"}], "backgroundColor": "#FFFFCA", "cornerRadius": "5px", "borderWidth": "2px", "borderColor": "#A48000"},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseX[0]['TWO_DOWN'], "align": "center", "weight": "bold", "size": "xxl"}], "backgroundColor": "#FFFFCA", "cornerRadius": "5px", "borderColor": "#A48000", "borderWidth": "2px"}], "spacing": "md"},{"type": "text", "text": "3ตัวหน้า", "size": "sm", "weight": "bold", "align": "center"}], "spacing": "md"},{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "horizontal", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseX[0]['THREE_PRE_X'], "weight": "bold", "align": "center", "size": "xxl"}], "backgroundColor": "#FFFFCA", "cornerRadius": "5px", "borderColor": "#A48000", "borderWidth": "2px"},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseX[0]['THREE_PRE_Y'], "align": "center", "weight": "bold", "size": "xxl"}], "backgroundColor": "#FFFFCA", "cornerRadius": "5px", "borderColor": "#A48000", "borderWidth": "2px"}], "spacing": "md"},{"type": "text", "text": "3ตัวหลัง", "size": "sm", "weight": "bold", "align": "center"}], "spacing": "md"}], "paddingStart": "30px", "paddingEnd": "30px", "spacing": "md"}], "margin": "lg", "paddingTop": "10px", "paddingBottom": "10px"},{"type": "box", "layout": "vertical", "contents": [{"type": "image", "url": "https://huaynaka.com/wp-content/uploads/2021/08/sub-banner-%E0%B8%AB%E0%B8%A7%E0%B8%A2%E0%B8%99%E0%B8%B2%E0%B8%84%E0%B8%B2.webp", "size": "full", "aspectRatio": "100:40", "aspectMode": "cover"}], "paddingTop": "10px"}], "paddingAll": "0px", "background":{"type": "linearGradient", "angle": "140deg", "startColor": "#DDC876", "endColor": "#FCF8A3"}}}
     return FLEXGLOTTO
 
 
-#for dataLotto in snapshot:
-    #if dataLotto['THREE_UP'] != "-":
-      
-      #print(dataLotto)
+def lottocheck(cvd):
+    resXX = requests.get('https://lotto.api.rayriffy.com/latest').json()
+    for rxs in resXX['response']['prizes']:
+        filtered_arr = [p for p in rxs['number'] if p == cvd]
+        for filtered in filtered_arr:
+            return [rxs['name'],filtered]
 
 
+
+
+# cmd = "ตรวจหวย 884495"
+# mlottox = re.search(r"\d{6}",cmd)
+# if mlottox:
+#    lottoXS = lottocheck(mlottox.group())
+#    print(lottoXS)
 
 # LATTE_FOREIGN_HANOI = snapshot['LATTE_FOREIGN_HANOI']
 # LATTE_FOREIGN_HANOIEXTRA = snapshot['LATTE_FOREIGN_HANOIEXTRA']
