@@ -377,12 +377,13 @@ def Oup(op):
                     if cmd.startswith(".bn"):
                         msgx = cmd.split(".bn")[1]
                         contact = client.getContact(sender)
+                        print(msgx)
                         inresse = translator.translate(msgx, src='auto',dest='en')
                         response = gpt4free.Completion.create(Provider.You, prompt=inresse)
                         resse = translator.translate(response,src='auto', dest='th')
                         client.sendMessage(to, "รอสักครู่..."+"\n"+contact.displayName)
                         time.sleep(3)
-                        client.sendMessage(to, resse +"\n"+ contact.displayName)
+                        client.sendMessage(to, resse.text)
                         
     except Exception as error:
         print(error)
