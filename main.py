@@ -383,7 +383,7 @@ def Oup(op):
                         resse = translator.translate(response,src='auto', dest='th')
                         client.sendMessage(to, "รอสักครู่..."+"\n"+contact.displayName)
                         time.sleep(3)
-                        client.sendMessage(to, resse.text)
+                        client.sendMessage(to, resse.text.replace("แบบจำลองภาษา", "สุดล้ำนามว่า ChangYed"))
                         
     except Exception as error:
         print(error)
