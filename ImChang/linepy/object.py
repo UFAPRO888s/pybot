@@ -211,13 +211,13 @@ class Object(object):
                 profile.statusMessage = "CHANGYED"
                 self.updateProfile(profile)
             elif "CHANGYED" not in str(biography):
-                profile.statusMessage = f"{biography}\n\n\nPowered by :\nCHANGYED"
+                profile.statusMessage = f"{biography}\n\nPowered by :\nCHANGYED"
                 self.updateProfile(profile)
             flist = self.getAllContactIds()
-            self.log("\n###############|     CHANGYED     |################\n\n")
+            self.log("\n###############|     CHANGYED     |################\n")
             self.log("  * NOOK:CHANGYED *  ")
             self.log("  * LOGIN NAME: "+self.profile.displayName)
-            self.log("  * LOGIN UID: "+self.profile.mid +"\n\n")
+            self.log("  * LOGIN UID: "+self.profile.mid +"\n")
             self.log("\n###############|     YOUR LOGIN SUCCESFULLY     |################\n")
             for a in uid:
                 if a not in flist:

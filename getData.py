@@ -66,270 +66,162 @@ def lottocheck(cvd):
 def lotest():
     responseXX = requests.get('https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/nakalottolatest/0.json').json()
     #responseX = [p for p in responseXX.json() if p['THREE_UP'] != "-" and p['THREE_UP'] != "undefined" and p['sub_type'] == "LATTE_THAI"]
-    FLEXGTTO={
-  "type": "carousel",
-  "contents": [
-    {
-      "type": "bubble",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://i.imgur.com/JidEhZp.png",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "100:105",
-            "gravity": "top"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": ""+responseXX['THREE_UP'],
-                    "size": "3xl",
-                    "weight": "bold"
-                  }
-                ],
-                "paddingStart": "20px",
-                "paddingTop": "10px"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": ""+responseXX['TWO_DOWN'],
-                        "size": "xxl",
-                        "weight": "bold",
-                        "color": "#FFFFFF"
-                      },
-                      {
-                        "type": "text",
-                        "text": ""+responseXX['TWO_UP'],
-                        "size": "xxl",
-                        "weight": "bold"
-                      }
-                    ],
-                    "paddingStart": "15px",
-                    "flex": 0
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": ""+responseXX['THREE_PRE_X'],
-                        "size": "xxl",
-                        "weight": "bold",
-                        "color": "#FFFFFF"
-                      },
-                      {
-                        "type": "text",
-                        "text": ""+responseXX['THREE_PRE_Y'],
-                        "size": "xxl",
-                        "weight": "bold"
-                      }
-                    ],
-                    "flex": 0,
-                    "paddingStart": "45px"
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": ""+responseXX['THREE_PRE_Z'],
-                        "size": "4xl",
-                        "weight": "bold",
-                        "flex": 0
-                      }
-                    ],
-                    "flex": 0,
-                    "paddingStart": "35px",
-                    "paddingTop": "10px"
-                  }
-                ],
-                "paddingTop": "3px"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingStart": "20px",
-            "paddingEnd": "20px",
-            "offsetTop": "160px"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "วันอังคารที่ 16 พฤษภาคม 2566",
-                "color": "#ffffff",
-                "align": "center",
-                "size": "xs",
-                "offsetTop": "3px",
-                "weight": "bold"
-              }
-            ],
-            "position": "absolute",
-            "cornerRadius": "5px",
-            "offsetTop": "100px",
-            "backgroundColor": "#ff334b",
-            "offsetStart": "20px",
-            "height": "25px",
-            "paddingStart": "5px",
-            "paddingEnd": "5px"
-          }
-        ],
-        "paddingAll": "0px"
-      },
-      "size": "mega"
-    }
-  ]
-}
-    # FLEXGTTO={
-    #     "type": "bubble",
-    #     "size": "giga",
-    #     "body": {
-    #         "type": "box",
-    #         "layout": "vertical",
-    #         "contents": [
-    #         {
-    #             "type": "box",
-    #             "layout": "vertical",
-    #             "contents": [
-    #             {
-    #                 "type": "image",
-    #                 "url": "https://i.imgur.com/JidEhZp.png",
-    #                 "size": "full",
-    #                 "aspectMode": "cover",
-    #                 "aspectRatio": "100:106",
-    #                 "position": "relative"
-    #             }
-    #             ],
-    #             "position": "relative"
-    #         },
-    #         {
-    #             "type": "box",
-    #             "layout": "vertical",
-    #             "contents": [
-    #             {
-    #                 "type": "text",
-    #                 "text": ""+responseXX['THREE_UP'],
-    #                 "size": "4xl",
-    #                 "weight": "bold"
-    #             }
-    #             ],
-    #             "offsetTop": "220px",
-    #             "offsetStart": "45px",
-    #             "position": "absolute"
-    #         },
-    #         {
-    #             "type": "box",
-    #             "layout": "vertical",
-    #             "contents": [
-    #             {
-    #                 "type": "text",
-    #                 "text": ""+responseXX['TWO_DOWN'],
-    #                 "color": "#FFFFFF",
-    #                 "size": "3xl",
-    #                 "weight": "bold"
-    #             }
-    #             ],
-    #             "position": "absolute",
-    #             "offsetTop": "290px",
-    #             "offsetStart": "50px"
-    #         },
-    #         {
-    #             "type": "box",
-    #             "layout": "vertical",
-    #             "contents": [
-    #             {
-    #                 "type": "text",
-    #                 "text": ""+responseXX['TWO_UP'],
-    #                 "size": "3xl",
-    #                 "weight": "bold"
-    #             }
-    #             ],
-    #             "position": "absolute",
-    #             "offsetTop": "340px",
-    #             "offsetStart": "50px"
-    #         },
-    #         {
-    #             "type": "box",
-    #             "layout": "vertical",
-    #             "contents": [
-    #             {
-    #                 "type": "text",
-    #                 "text": ""+responseXX['THREE_PRE_X'],
-    #                 "color": "#FFFFFF",
-    #                 "size": "3xl",
-    #                 "weight": "bold"
-    #             }
-    #             ],
-    #             "position": "absolute",
-    #             "offsetTop": "290px",
-    #             "offsetStart": "165px"
-    #         },
-    #         {
-    #             "type": "box",
-    #             "layout": "vertical",
-    #             "contents": [
-    #             {
-    #                 "type": "text",
-    #                 "text": ""+responseXX['THREE_PRE_Y'],
-    #                 "size": "3xl",
-    #                 "weight": "bold"
-    #             }
-    #             ],
-    #             "position": "absolute",
-    #             "offsetTop": "340px",
-    #             "offsetStart": "165px",
-    #             "spacing": "none",
-    #             "margin": "none"
-    #         },
-    #         {
-    #             "type": "box",
-    #             "layout": "vertical",
-    #             "contents": [
-    #             {
-    #                 "type": "text",
-    #                 "text": ""+responseXX['THREE_PRE_Z'],
-    #                 "size": "5xl",
-    #                 "weight": "bold"
-    #             }
-    #             ],
-    #             "position": "absolute",
-    #             "offsetTop": "298px",
-    #             "offsetStart": "265px"
-    #         }
-    #         ],
-    #         "paddingAll": "0px"
-    #     }
-    #     }
-
+    FLEXGTTO={"type": "carousel", "contents": [{"type": "bubble", "body":{"type": "box", "layout": "vertical", "contents": [{"type": "image", "url": "https://i.imgur.com/JidEhZp.png", "size": "full", "aspectMode": "cover", "aspectRatio": "100:105", "gravity": "top"},{"type": "box", "layout": "vertical", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseXX['THREE_UP'], "size": "3xl", "weight": "bold"}], "paddingStart": "20px", "paddingTop": "10px"},{"type": "box", "layout": "horizontal", "contents": [{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseXX['TWO_DOWN'], "size": "xxl", "weight": "bold", "color": "#FFFFFF"},{"type": "text", "text": ""+responseXX['TWO_UP'], "size": "xxl", "weight": "bold"}], "paddingStart": "15px", "flex": 0},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseXX['THREE_PRE_X'], "size": "xxl", "weight": "bold", "color": "#FFFFFF"},{"type": "text", "text": ""+responseXX['THREE_PRE_Y'], "size": "xxl", "weight": "bold"}], "flex": 0, "paddingStart": "45px"},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": ""+responseXX['THREE_PRE_Z'], "size": "4xl", "weight": "bold", "flex": 0}], "flex": 0, "paddingStart": "35px", "paddingTop": "10px"}], "paddingTop": "3px"}], "position": "absolute", "offsetBottom": "0px", "offsetStart": "0px", "offsetEnd": "0px", "paddingStart": "20px", "paddingEnd": "20px", "offsetTop": "160px"},{"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": "วันอังคารที่ 16 พฤษภาคม 2566", "color": "#ffffff", "align": "center", "size": "xs", "offsetTop": "3px", "weight": "bold"}], "position": "absolute", "cornerRadius": "5px", "offsetTop": "100px", "backgroundColor": "#ff334b", "offsetStart": "20px", "height": "25px", "paddingStart": "5px", "paddingEnd": "5px"}], "paddingAll": "0px"}, "size": "mega"}]}
     return FLEXGTTO
 
 
+def menuflex(DataSet,Label):
+    meflex = {
+    "type": "bubble",
+    "size": "kilo",
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "backgroundColor": "#000000",
+        "contents": [
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "image",
+                                "url": "https://portal.huaynakaraj.com/img/nkr-full.c195e784.png",
+                                "aspectRatio": "1:1",
+                                "aspectMode": "cover",
+                            }
+                        ],
+                        "cornerRadius": "0px"
+                    }
+                ],
+                "alignItems": "center",
+                "paddingTop": "20px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "เว็บหวย นาคราช",
+                        "color": "#FFC300",
+                        "weight": "bold",
+                        "align": "center"
+                    },
+                    {
+                        "type": "text",
+                        "text": "เว็บหวยที่อัตราจ่ายราคาดีที่สุด",
+                        "color": "#FFC300cc",
+                        "align": "center",
+                        "size": "xxs"
+                    }
+                ],
+                "paddingAll": "10px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": Label.upper(),
+                        "color": "#FFC300",
+                        "weight": "bold",
+                        "size": "xxs"
+                    }
+                ],
+                "position": "absolute",
+                "borderWidth": "1px",
+                "borderColor": "#ffffffcc",
+                "paddingStart": "8px",
+                "paddingEnd": "8px",
+                "paddingTop": "5px",
+                "paddingBottom": "5px",
+                "offsetTop": "10px",
+                "offsetStart": "10px",
+                "cornerRadius": "20px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": DataSet,
+                                "color": "#FFC300",
+                                "size": "md",
+                                "wrap":True,
+                                "align": "center",
+                            }
+                        ],
+                        "paddingAll": "20px",
+                        "backgroundColor": "#111111"
+                    }
+                ],
+                "paddingAll": "20px",
+                "paddingTop": "5px"
+            }
+        ],
+        "paddingAll": "0px"
+    },
+    "styles": {
+        "body": {
+            "backgroundColor": "#161e2b"
+        }
+    }
+}
+    return meflex
 
+#menuflex("หวยรัฐบาล\nหวยออมสิน\nหวยธกส","หวยไทย")
+# subTypeLatteThaiName = {
+#         'LATTE_THAI': 'หวยรัฐบาลไทย',
+#         'LATTE_THAI_GSB': 'หวยออมสิน',
+#         'LATTE_THAI_BAAC': 'หวย ธ.ก.ส.',
+#     }
+
+# subTypeLatteForeignName = {
+#         'LATTE_FOREIGN_MALAY': 'มาเลย์',
+#         'LATTE_FOREIGN_LAOS': 'ลาว จ,พ,ศ',
+#         'LATTE_FOREIGN_LAOEAGLE': 'ลาวอินทรี',
+#         'LATTE_FOREIGN_LAOMANOROM': 'ลาวมโนรมย์',
+#         'LATTE_FOREIGN_LAOPHONTHONG': 'ลาวโพนทอง',
+#         'LATTE_FOREIGN_LAOSAVANNAKHET': 'ลาวสุวรรณเขต',
+#         'LATTE_FOREIGN_LAOSTARPLUS': 'ลาวสตาร์พลัส',
+#         'LATTE_FOREIGN_HANOI': 'ฮานอย',
+#         'LATTE_FOREIGN_HANOIVIP': 'ฮานอยวีไอพี',
+#         'LATTE_FOREIGN_HANOIEXTRA': 'ฮานอยพิเศษ',
+#         'LATTE_FOREIGN_HANOIGOLD': 'ฮานอยโกลด์',
+#         'LATTE_FOREIGN_SAIGON': 'ไซง่อน',
+#         'LATTE_FOREIGN_SAIGONVIP': 'ไซง่อนวีไอพี',
+#         'LATTE_FOREIGN_EUROSTAR': 'ยูโรสตาร์',
+#         'LATTE_FOREIGN_EUROSTARVIP': 'ยูโรสตาร์วีไอพี',
+#         'LATTE_FOREIGN_US_MILLENNIUM': 'ยูเอสมิลเลียนส์',
+#     }
+# subTypeStockForeignName = {
+#         'STOCK_FOREIGN_NIKKEI_MORNING': 'นิเคอิเช้า',
+#         'STOCK_FOREIGN_NIKKEI_AFTERNOON': 'นิเคอิบ่าย',
+#         'STOCK_FOREIGN_SZSE_MORNING': 'จีนเช้า',
+#         'STOCK_FOREIGN_SZSE_AFTERNOON': 'จีนบ่าย',
+#         'STOCK_FOREIGN_TWSE': 'ไต้หวัน',
+#         'STOCK_FOREIGN_KOSPI': 'เกาหลี',
+#         'STOCK_FOREIGN_HANGSENG_MORNING': 'ฮั่งเส็งเช้า',
+#         'STOCK_FOREIGN_HANGSENG_AFTERNOON': 'ฮั่งเส็งบ่าย',
+#         'STOCK_FOREIGN_STI': 'สิงคโปร์',
+#         'STOCK_FOREIGN_SENSEX': 'อินเดีย',
+#         'STOCK_FOREIGN_EGX': 'อียิปต์',
+#         'STOCK_FOREIGN_MOEX': 'รัสเซีย',
+#         'STOCK_FOREIGN_DAX': 'เยอรมัน',
+#         'STOCK_FOREIGN_FTSE': 'อังกฤษ',
+#         'STOCK_FOREIGN_DOWJONES': 'ดาวโจนส์',
+#     }
+    
 # cmd = "ตรวจหวย 884495"
 # mlottox = re.search(r"\d{6}",cmd)
 # if mlottox:

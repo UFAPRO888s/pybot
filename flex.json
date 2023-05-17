@@ -1,7 +1,7 @@
 {
     "type": "bubble",
     "size": "giga",
-    "body": {
+    "header": {
       "type": "box",
       "layout": "vertical",
       "contents": [
@@ -11,117 +11,450 @@
           "contents": [
             {
               "type": "image",
-              "url": "https://i.imgur.com/JidEhZp.png",
-              "size": "full",
-              "aspectMode": "cover",
-              "aspectRatio": "100:106",
-              "position": "relative"
-            }
-          ],
-          "position": "relative"
-        },
-        {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [],
-          "height": "100px",
-          "position": "absolute"
-        },
-        {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
+              "url": "https://huaynakaraj.com/wp-content/uploads/2023/03/LOGO-1-1024x1024.webp",
+              "offsetTop": "20px"
+            },
             {
               "type": "text",
-              "text": "443",
-              "size": "4xl",
-              "weight": "bold"
-            }
-          ],
-          "offsetTop": "220px",
-          "offsetStart": "45px",
-          "position": "absolute"
-        },
-        {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
+              "text": "ตรวจผลหวย",
+              "size": "lg",
+              "weight": "bold",
+              "align": "center",
+              "color": "#FFFFFF"
+            },
             {
               "type": "text",
-              "text": "533",
-              "color": "#FFFFFF",
-              "size": "3xl",
-              "weight": "bold"
+              "text": "hello, world",
+              "size": "sm",
+              "align": "center",
+              "color": "#FFFFFF"
             }
-          ],
-          "position": "absolute",
-          "offsetTop": "290px",
-          "offsetStart": "50px"
-        },
-        {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "text",
-              "text": "643",
-              "size": "3xl",
-              "weight": "bold"
-            }
-          ],
-          "position": "absolute",
-          "offsetTop": "340px",
-          "offsetStart": "50px"
-        },
-        {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "text",
-              "text": "432",
-              "color": "#FFFFFF",
-              "size": "3xl",
-              "weight": "bold"
-            }
-          ],
-          "position": "absolute",
-          "offsetTop": "290px",
-          "offsetStart": "165px"
-        },
-        {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "text",
-              "text": "222",
-              "size": "3xl",
-              "weight": "bold"
-            }
-          ],
-          "position": "absolute",
-          "offsetTop": "340px",
-          "offsetStart": "165px",
-          "spacing": "none",
-          "margin": "none"
-        },
-        {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "text",
-              "text": "111",
-              "size": "5xl",
-              "weight": "bold"
-            }
-          ],
-          "position": "absolute",
-          "offsetTop": "298px",
-          "offsetStart": "265px"
+          ]
         }
       ],
-      "paddingAll": "0px"
+      "backgroundColor": "#714F06",
+      "paddingTop": "0px"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "หวยไทย",
+              "size": "xs",
+              "weight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Thai-1.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Omsin.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/torkorsor.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderColor": "#714F06",
+              "borderWidth": "2px"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [],
+              "paddingAll": "5px"
+            }
+          ],
+          "spacing": "lg",
+          "margin": "lg"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "หวยลาว",
+              "size": "xs",
+              "weight": "bold"
+            }
+          ],
+          "paddingTop": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Lao.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo-LaoStarplus.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo-Lao-Ponthong.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo-Insee.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo_manorom.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo-suwannakhet.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            }
+          ],
+          "spacing": "sm",
+          "margin": "md"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "หวยเวียดนาม",
+              "size": "xs",
+              "weight": "bold"
+            }
+          ],
+          "paddingTop": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Hanoy.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo-Hanoy-gold.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Hanoy-S.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Hanoy-VIP.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo-SAIGON2.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo-SAIGON-VIP.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            }
+          ],
+          "spacing": "sm",
+          "margin": "md"
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "text",
+              "text": "หวยมาเลย์",
+              "size": "xs",
+              "weight": "bold",
+              "flex": 0
+            },
+            {
+              "type": "text",
+              "text": "หวยยูโร",
+              "size": "xs",
+              "weight": "bold",
+              "flex": 0,
+              "offsetStart": "80px"
+            }
+          ],
+          "paddingTop": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/malay.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [],
+              "paddingAll": "5px"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo_EUROSTAR.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/Logo_EUROSTAR_VIP.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://huaynakaraj.com/wp-content/uploads/2023/04/LOGO-USmillions.png"
+                }
+              ],
+              "paddingAll": "5px",
+              "backgroundColor": "#FFFFFFcc",
+              "cornerRadius": "5px",
+              "borderWidth": "2px",
+              "borderColor": "#714F06"
+            }
+          ],
+          "spacing": "sm",
+          "margin": "md"
+        }
+      ],
+      "background": {
+        "type": "linearGradient",
+        "angle": "0deg",
+        "startColor": "#B99041",
+        "endColor": "#FAF5A0"
+      },
+      "paddingAll": "0px",
+      "paddingStart": "20px",
+      "paddingEnd": "20px",
+      "paddingBottom": "20px",
+      "paddingTop": "20px"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "hello, world",
+          "color": "#FFFFFF",
+          "wrap": true,
+          "align": "center"
+        }
+      ],
+      "backgroundColor": "#5B5B5B",
+      "paddingStart": "30px",
+      "paddingEnd": "30px"
     }
   }

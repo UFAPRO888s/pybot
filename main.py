@@ -6,7 +6,12 @@ from Naked.toolshed.shell import execute_js
 from threading import Thread, active_count
 import json,traceback,requests,re,ast,time,random,shutil
 from random import randint
-from getData import lottoFlex,lottoFlexAll,glotto,lottocheck,lotest
+import gpt4free
+from gpt4free import Provider
+from googletrans import Translator
+translator = Translator()
+
+from getData import lottoFlex,lottoFlexAll,glotto,lottocheck,lotest,menuflex
 login = json.loads(open('Data/token3.json','r').read())
 setting = json.loads(open('Data/settings.json','r').read())
 
@@ -99,6 +104,9 @@ def sendFlexVideo(to, videoUrl, thumbnail):
         }]
     }
     return requests.post(url, headers=headers, data=json.dumps(data))
+
+
+
 
 #LOTTOALLDATA = getDDD()
 #print(LOTTOALLDATA['DD'],LOTTOALLDATA['SS'])
@@ -211,6 +219,9 @@ def Oup(op):
                         
                     if cmd == "tsk":
                         sendFlex(to, "ประกาศผลหวย", lotest())
+                        
+                    if cmd == "menu":
+                        sendFlex(to, "เมนูผลหวย", menuflex("หวยรัฐบาล\nหวยออมสิน\nหวยธกส","หวยไทย"))
                     
                     if cmd == ".img":
                         imgurl = "https://tang.huaynaka.com/img/ng-104.e3060e54.png"
@@ -248,36 +259,39 @@ def Oup(op):
                                 client.sendMessage(to,"เกินขีดจำกัด")
                     
                     if cmd == '⚠️':
-                        group = client.getGroup(to)
-                        nama = [contact.mid for contact in group.members]
-                        k = len(nama)//100
-                        for a in range(k+1):
-                            txt = ''
-                            s=0
-                            b=[]
-                            for i in group.members[a*100 : (a+1)*100]:
-                                b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
-                                s += 7
-                                txt += '@Alin \n'
-                            client.sendMessage(to, text=txt, contentMetadata={'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                            client.sendMessage(to, "จำนวนทั้งหมด {} ID\n𝗣𝗘𝗥𝗙𝗢𝗥𝗠𝗔𝗡𝗖𝗘 𝗕𝗬 𝗡𝗢𝗢𝗞𝗗𝗘𝗩".format(str(len(nama))))
+                        if msg.toType == 2:
+                            group = client.getGroup(to)
+                            nama = [contact.mid for contact in group.members]
+                            k = len(nama)//100
+                            for a in range(k+1):
+                                txt = ''
+                                s=0
+                                b=[]
+                                for i in group.members[a*100 : (a+1)*100]:
+                                    b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
+                                    s += 7
+                                    txt += '@Alin \n'
+                                client.sendMessage(to, text=txt, contentMetadata={'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
+                                client.sendMessage(to, "จำนวนทั้งหมด {} ID\n𝗣𝗘𝗥𝗙𝗢𝗥𝗠𝗔𝗡𝗖𝗘 𝗕𝗬 𝗡𝗢𝗢𝗞𝗗𝗘𝗩".format(str(len(nama))))
                             
                     if cmd.startswith('.ตามมา '):
-                        midd = nook.replace(".ตามมา ","")
-                        groupTarget = client.getGroup(midd)
-                        mempoint = [contact.mid for contact in groupTarget.members]
-                        k = len(mempoint)//100
-                        for a in range(k+1):
-                            for idpoint in groupTarget.members[a*100:(a+1)*100]:
-                                client.findAndAddContactsByMid(idpoint.mid)
-                                client.inviteIntoGroup(to,[idpoint.mid])
-                            client.sendMessage(to, "จำนวนID เชิญมา {} ID\n𝗣𝗘𝗥𝗙𝗢𝗥𝗠𝗔𝗡𝗖𝗘 𝗕𝗬 𝗡𝗢𝗢𝗞𝗗𝗘𝗩".format(str(len(mempoint))))
+                        if msg.toType == 2:
+                            midd = nook.replace(".ตามมา ","")
+                            groupTarget = client.getGroup(midd)
+                            mempoint = [contact.mid for contact in groupTarget.members]
+                            k = len(mempoint)//100
+                            for a in range(k+1):
+                                for idpoint in groupTarget.members[a*100:(a+1)*100]:
+                                    client.findAndAddContactsByMid(idpoint.mid)
+                                    client.inviteIntoGroup(to,[idpoint.mid])
+                                client.sendMessage(to, "จำนวนID เชิญมา {} ID\n𝗣𝗘𝗥𝗙𝗢𝗥𝗠𝗔𝗡𝗖𝗘 𝗕𝗬 𝗡𝗢𝗢𝗞𝗗𝗘𝗩".format(str(len(mempoint))))
 
                     if cmd.startswith("✅️ "):
-                        midd = nook.replace("✅️ ","")
-                        client.findAndAddContactsByMid(midd)
-                        client.inviteIntoGroup(to,[midd])
-                        sendFlexImage(to,"https://d96fylcqw0d34.cloudfront.net/nookassets/logo.png")
+                        if msg.toType == 2:
+                            midd = nook.replace("✅️ ","")
+                            client.findAndAddContactsByMid(midd)
+                            client.inviteIntoGroup(to,[midd])
+                            sendFlexImage(to,"https://d96fylcqw0d34.cloudfront.net/nookassets/logo.png")
                     
                     if cmd == "#ยกเชิญ":
                         if msg.toType == 2:
@@ -358,7 +372,17 @@ def Oup(op):
                             client.sendMessage(to,"ยินดีกับ "+contact.displayName+" \nถูกหวย "+lottoXS[0]+" เลข "+lottoXS[1]+"\n")
                         else:
                             client.sendMessage(to,"ไม่ถูก เอาใหม่นะ "+contact.displayName)
-                             
+                            
+                    
+                    if cmd.startswith(".bn"):
+                        contact = client.getContact(sender)
+                        inresse = translator.translate(cmd, dest='en')
+                        response = gpt4free.Completion.create(Provider.You, prompt=inresse)
+                        resse = translator.translate(response, dest='th')
+                        client.sendMessage(to, "รอสักครู่..."+"\n"+contact.displayName)
+                        time.sleep(3)
+                        client.sendMessage(to, resse+"\n"+contact.displayName)
+                        
     except Exception as error:
         print(error)
 
