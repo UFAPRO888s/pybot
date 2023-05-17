@@ -375,8 +375,9 @@ def Oup(op):
                             
                     
                     if cmd.startswith(".bn"):
+                        msgx = cmd.replace(".bn","")
                         contact = client.getContact(sender)
-                        inresse = translator.translate(cmd, dest='en')
+                        inresse = translator.translate(msgx, dest='en')
                         response = gpt4free.Completion.create(Provider.You, prompt=inresse)
                         resse = translator.translate(response, dest='th')
                         client.sendMessage(to, "รอสักครู่..."+"\n"+contact.displayName)
