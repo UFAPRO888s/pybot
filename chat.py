@@ -15,9 +15,12 @@ from firebase_admin import db
 cred = credentials.Certificate("./AccountCredentials.json")
 firebase_admin.initialize_app(cred,{'databaseURL':'https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app'})
 Lottoref = db.reference('playyeeke')
+
 Lottoyeeke05 = db.reference('lotto/KIWI_05')
 Lottoyeeke10 = db.reference('lotto/KIWI_10')
 Lottoyeeke15 = db.reference('lotto/KIWI_15')
+
+LottoPlayround = db.reference('playround')
 
 response = requests.get("https://result.huaynaka.net/naga-data/"+now.strftime("%Y/%m/%d")+"/data.json").json()
 filtered_arr = [p for p in response['KIWI_05'] if p['results'][0]['digit'] == "-"]
@@ -32,8 +35,20 @@ def datxtim(t1x):
     return t1datetime
 
 #now.isoformat()
-
-
+def Lottoye05(rod):
+    Lottoyeeke05 = LottoPlayround.child('KIWI_05')
+    Lottoyeeke05.set({"roundX":rod,"datetime":dt_string})
+    #print()
+    
+def Lottoye10(rod):
+    Lottoyeeke10 = LottoPlayround.child('KIWI_10')
+    Lottoyeeke10.set({"roundX":rod,"datetime":dt_string})
+    #print()
+    
+def Lottoye15(rod):
+    Lottoyeeke15 = LottoPlayround.child('KIWI_15')
+    Lottoyeeke15.set({"roundX":rod,"datetime":dt_string})
+    #print()
 
 def Pyeekee(msguser,yeekecon_ID,yeekecon_Name,yeekecon_img):
     users_ref = Lottoref.child('users')

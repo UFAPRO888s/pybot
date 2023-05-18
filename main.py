@@ -12,7 +12,7 @@ import gpt4free
 from gpt4free import Provider
 from googletrans import Translator
 translator = Translator()
-from chat import Pyeekee,yeekeeLottoNotify
+from chat import Pyeekee,yeekeeLottoNotify,Lottoye05,Lottoye10,Lottoye15
 from getData import lottoFlex,lottoFlexAll,glotto,lottocheck,lotest,menuflex
 login = json.loads(open('Data/token3.json','r').read())
 setting = json.loads(open('Data/settings.json','r').read())
@@ -420,8 +420,14 @@ def Oup(op):
                         RoundTextStart = "🟢เปิดรับแทงหวย\nหวยยี่กี่ "+str(RTextToEmo)+"\nรอบที่ "+str(Rtypetoemo)+"\n🕛 ปิดรับแทง\n"+str(yeekeRoundNow)+"\n"
                         testto = "u0b499ce24e07b16ec12f8d0ba3ef8438"
                         
-                        yeekecontact = client.getContact(sender)
-                        Xyeeke2 = Pyeekee(yeeke2.group())
+                        #yeekecontact = client.getContact(sender)
+                        #Xyeeke2 = Pyeekee(yeeke2.group())
+                        if msgxtype[1] == "05":
+                            Lottoye05(msgxtype[2])
+                        if msgxtype[1] == "10":
+                            Lottoye10(msgxtype[2])
+                        if msgxtype[1] == "15":
+                            Lottoye15(msgxtype[2])
                         
                         client.sendMessage(testto,RoundTextStart)
                         
