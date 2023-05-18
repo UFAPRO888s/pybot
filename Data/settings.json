@@ -8,7 +8,7 @@
         "c0e4184a6bd0fc0d24552ef578a70819c": "LINE"
     },
     "groupLotto": [
-       "ceeb734156eec4672b42c880ef9b76ef7",
+       "",
        "c3319541d83f70d84de70fe7e1ba515fd"
     ],
     "join": true,
@@ -26,6 +26,7 @@
         "c0e4184a6bd0fc0d24552ef578a70819c": true
     },
     "proTeamX": {},
+    "autolike": true,
     "rname": "Default",
     "setKey": {
         "key": ".",
@@ -34,6 +35,7 @@
     "target": {},
     "ticket": false,
     "welcome": {},
+    "commentPost": "autopost&like reload",
     "welcomsg": {},
     "whitelist": [],
     "winvite": true

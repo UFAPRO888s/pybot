@@ -4,13 +4,15 @@ from ImChang.akad import *
 from Liff.ttypes import LiffChatContext, LiffContext, LiffSquareChatContext, LiffNoneContext, LiffViewRequest
 from Naked.toolshed.shell import execute_js
 from threading import Thread, active_count
-import json,traceback,requests,re,ast,time,random,shutil
+import json,traceback,requests,re,ast,time,random,shutil,codecs,humanize,pytz
+from datetime import datetime, timezone, timedelta
+tz = timezone(timedelta(hours = 7))
 from random import randint
 import gpt4free
 from gpt4free import Provider
 from googletrans import Translator
 translator = Translator()
-
+from chat import Pyeekee,yeekeeLottoNotify
 from getData import lottoFlex,lottoFlexAll,glotto,lottocheck,lotest,menuflex
 login = json.loads(open('Data/token3.json','r').read())
 setting = json.loads(open('Data/settings.json','r').read())
@@ -25,11 +27,18 @@ setting = json.loads(open('Data/settings.json','r').read())
 client = LINE(idOrAuthToken="Fr0kWcMFfzXzgW7WId07.ikNvhWs3jkc7oHDcaL9TvW.qBULkueR0tVNaMj51HU28NSesohZw9ZeJohSIFV0CeE=")
 client.log("Auth Token : " + str(client.authToken))
 
-admin = ["ued7545af3e0c0a348a18832777b9cee2","u0b499ce24e07b16ec12f8d0ba3ef8438"]
+admin = ["u20a9d51f04b724a0bb3a1742025f6d57","u0b499ce24e07b16ec12f8d0ba3ef8438"]
 
 clPoll = OEPoll(client)
 mid = client.profile.mid
 
+# tz = pytz.timezone("Asia/Bangkok")
+# timeNow = datetime.now(tz=tz)
+# datetime.strftime(timeNow,'%Y-%m-%d')
+# fdata = codecs.open('sticker.json','w','utf-8')
+# json.dump("stickers", fdata, sort_keys=True, indent=4, ensure_ascii=False)
+# with open('token.txt','w') as lg:
+#     lg.write("maxbots.authToken")
 
 def liff():
     url = 'https://access.line.me/dialog/api/permissions'
@@ -105,7 +114,13 @@ def sendFlexVideo(to, videoUrl, thumbnail):
     }
     return requests.post(url, headers=headers, data=json.dumps(data))
 
-
+def datxtim(t1x):
+    dateexe = t1x.split("T")[0]
+    timeexe = t1x.split("T")[1].replace(".000Z", "")
+    exetdate = dateexe.split("-")
+    exettime = timeexe.split(":")
+    t1datetime = datetime(int(exetdate[0]),int(exetdate[1]),int(exetdate[2]),int(exettime[0]),int(exettime[1]),int(exettime[2]),tzinfo=tz)
+    return t1datetime
 
 
 #LOTTOALLDATA = getDDD()
@@ -124,6 +139,35 @@ def SENDLATTE_THAIFLEX():
     sentFtog = setting['groupLotto']
     for xx in sentFtog:
         sendFlex(xx, "ประกาศผลหวย", glotto())
+        
+def sendMentionWithFooter(to, text="", mids=[]):
+    arrData = ""
+    arr = []
+    mention = "@CHANGYED"
+    if mids == []:
+        raise Exception("Invalid mids")
+    if "@!" in text:
+        if text.count("@!") != len(mids):
+            raise Exception("Invalid mids")
+        texts = text.split("@!")
+        textx = ""
+        for mid in mids:
+            textx += str(texts[mids.index(mid)])
+            slen = len(textx)
+            elen = len(textx) + 15
+            arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mid}
+            arr.append(arrData)
+            textx += mention
+        textx += str(texts[len(mids)])
+    else:
+        textx = ""
+        slen = len(textx)
+        elen = len(textx) + 15
+        arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mids[0]}
+        arr.append(arrData)
+        textx += mention + str(text)
+    client.sendMessage(to, textx, {'AGENT_NAME':'Dont Click!', 'AGENT_LINK': 'https://line.me/ti/p/yMup8Yj4uI', 'AGENT_ICON': "http://dl.profile.line-cdn.net/" + client.getProfile().picturePath, 'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+
 
 def Oup(op):
     try:
@@ -362,18 +406,36 @@ def Oup(op):
                            SENDLATTE_THAIFLEX() 
                         else:
                            SENDFLEX(datatypelotto)
+                    #nook#u36e79e312a68ba52dce563c742608408
                     
+                    if re.search(r"yeekeeNK",nook):
+                        msgxtype = nook.split("|")
+                        xtypeUU = "https://bet-balls-default-rtdb.asia-southeast1.firebasedatabase.app/lotto/KIWI_"+str(msgxtype[1])+"/"+str(msgxtype[2])+".json"
+                        yeekeeLottoNotify = requests.get(xtypeUU).json()
+                        yeekeRoundNow = datxtim(yeekeeLottoNotify['cutoff_datetime'])
+                        RTextToEmo = str(msgxtype[1]).replace("0", "0️⃣").replace("1", "1️⃣").replace("2", "2️⃣").replace("3", "3️⃣").replace("4", "4️⃣").replace("5", "5️⃣").replace("6", "6️⃣").replace("7", "7️⃣").replace("8", "8️⃣").replace("9", "9️⃣")
+                        Rtypetoemo = str(msgxtype[2]).replace("0", "0️⃣").replace("1", "1️⃣").replace("2", "2️⃣").replace("3", "3️⃣").replace("4", "4️⃣").replace("5", "5️⃣").replace("6", "6️⃣").replace("7", "7️⃣").replace("8", "8️⃣").replace("9", "9️⃣")
+                        #Ttexttoemo = [p for p in numberEmo if p['num'] == ytype]
+                       
+                        RoundTextStart = "🟢เปิดรับแทงหวย\nหวยยี่กี่ "+str(RTextToEmo)+"\nรอบที่ "+str(Rtypetoemo)+"\n🕛 ปิดรับแทง\n"+str(yeekeRoundNow)+"\n"
+                        testto = "u0b499ce24e07b16ec12f8d0ba3ef8438"
+                        
+                        yeekecontact = client.getContact(sender)
+                        Xyeeke2 = Pyeekee(yeeke2.group())
+                        
+                        client.sendMessage(testto,RoundTextStart)
+                        
                     mlottox = re.search(r"\d{6}",cmd)
                     if mlottox:
-                        lottoXS = lottocheck(mlottox.group())
-                        contact = client.getContact(sender)
-                        #print(contact)
-                        if lottoXS:
-                            client.sendMessage(to,"ยินดีกับ "+contact.displayName+" \nถูกหวย "+lottoXS[0]+" เลข "+lottoXS[1]+"\n")
-                        else:
-                            client.sendMessage(to,"ไม่ถูก เอาใหม่นะ "+contact.displayName)
+                        if not cmd.startswith("yeekeeNK"):
+                            lottoXS = lottocheck(mlottox.group())
+                            contact = client.getContact(sender)
+                            #print(contact)
+                            if lottoXS:
+                                client.sendMessage(to,"ยินดีกับ "+contact.displayName+" \nถูกหวย "+lottoXS[0]+" เลข "+lottoXS[1]+"\n")
+                            else:
+                                client.sendMessage(to,"ไม่ถูก เอาใหม่นะ "+contact.displayName)
                             
-                    
                     if cmd.startswith(".bn"):
                         msgx = cmd.split(".bn")[1]
                         contact = client.getContact(sender)
@@ -384,6 +446,108 @@ def Oup(op):
                         client.sendMessage(to, "รอสักครู่..."+"\n"+contact.displayName)
                         time.sleep(3)
                         client.sendMessage(to, resse.text.replace("แบบจำลองภาษา", "สุดล้ำนามว่า ChangYed"))
+                        
+                    if cmd.startswith("sgtogc "):
+                        sep = cmd.split(" ")
+                        query = cmd.replace(sep[0] + " ","")
+                        groups = client.getGroupIdsJoined()
+                        try:
+                            listGroup = groups[int(query)-1]
+                            group = client.getGroup(listGroup)
+                            gf = "b07c07bc-fcc1-42e1-bd56-9b821a826f4f","7f2a5559-46ef-4f27-9940-66b1365950c4","53b25d10-51a6-4c4b-8539-38c242604143","a9ed993f-a4d8-429d-abc0-2692a319afde"
+                            client.sendGift(group.id, random.choice(gf), "theme")
+                            txt = "「 Gift 」"
+                            client.sendMentionWithFooter(to, txt, "Succesfully send gift to Group {} :)".format(group.name), [sender])
+                        except:
+                            pass
+                        
+                    yeeke2 = re.search(r"^\d{2}.+",cmd)
+                    yeeke3 = re.search(r"^\d{3}.+",cmd)
+                    if yeeke2:
+                        yeekecontact = client.getContact(sender)
+                        Xyeeke2 = Pyeekee(yeeke2.group())
+                        
+                        
+                    if cmd.startswith("get note"):
+                        data = client.getGroupPost(to)
+                        try:
+                            music = data['result']['feeds'][int(cmd.split(' ')[2]) - 1]
+                            b = [music['post']['userInfo']['writerMid']]
+                            try:
+                                for a in music['post']['contents']['textMeta']:b.append(a['mid'])
+                            except:pass
+                            try:
+                                g= "\n\nDescription:\n"+str(music['post']['contents']['text'].replace('@','@!'))
+                            except:
+                                g=""
+                            print(music)
+                            a="\n   Total Like: "+str(music['post']['postInfo']['likeCount'])
+                            a +="\n   Total Comment: "+str(music['post']['postInfo']['commentCount'])
+                            gtime = music['post']['postInfo']['createdTime']
+                            a +="\n   Created at: "+str(humanize.naturaltime(datetime.fromtimestamp(gtime/1000)))
+                            a += g
+                            zx = ""
+                            zxc = " 「 กลุ่ม 」\nประเภท: เรียกดูโน๊ต\n   ผู้เขียน : "+a
+                            try:
+                                client.sendReplyMessage(id, to, zxc)
+                            except Exception as e:
+                                client.sendMessage(to, str(e))
+                            try:
+                                for c in music['post']['contents']['media']:
+                                    params = {'userMid': client.getProfile().mid, 'oid': c['objectId']}
+                                    path = client.server.urlEncode(client.server.LINE_OBS_DOMAIN, '/myhome/h/download.nhn', params)
+                                    if 'PHOTO' in c['type']:
+                                        try:
+                                            client.sendImageWithURL(to,path,'POST')
+                                        except:pass
+                                    else:
+                                        pass
+                                    if 'VIDEO' in c['type']:
+                                        try:
+                                            client.sendVideoWithURL(to,path)
+                                        except:pass
+                                    else:
+                                        pass
+                            except:
+                                pass
+                        except Exception as e:
+                            return client.sendMessage(to,"「 Auto Respond 」\n"+str(e))
+                        
+                    if cmd.startswith('ไลค์ '):
+                        try:
+                            typel = [1001,1002,1003,1004,1005,1006]
+                            key = eval(msg.contentMetadata["MENTION"])
+                            u = key["MENTIONEES"][0]["M"]
+                            a = client.getContact(u).mid
+                            s = client.getContact(u).displayName
+                            hasil = client.getHomeProfile(a)
+                            st = hasil['result']['feeds']
+                            for i in range(len(st)):
+                                test = st[i]
+                                result = test['post']['postInfo']['postId']
+                                client.likePost(str(sender), str(result), likeType=random.choice(typel))
+                                setting["autolike"] += 1
+                                #backupData()
+                                client.createComment(str(sender), str(result), setting["commentPost"])
+                            client.sendMessage(to, 'Like&แสดงความคิดเห็น '+str(len(st))+' โพสต์\n โพสต์ของ : ' + str(s))
+                        except Exception as e:
+                            client.sendMessage(to, str(e))
+                        
+                    if cmd.startswith("schat"):
+                        text = cmd.split(" ")
+                        jmlh = int(text[2])
+                        balon = jmlh * (text[3]+"\n")
+                        if text[1] == "on":
+                            if jmlh <= 10000:
+                                for x in range(jmlh):
+                                    client.sendMessage(to, text[3])
+                            else:
+                                client.sendMention(to, "ขออภัยจำนวนมากเกินไป @!", [sender])
+                        elif text[1] == "off":
+                            if jmlh <= 10000:
+                                client.sendMessage(to, balon)
+                            else:
+                                client.sendMention(to, "ขออภัยจำนวนมากเกินไป @!", [sender])
                         
     except Exception as error:
         print(error)
