@@ -472,6 +472,7 @@ def Oup(op):
                     if yeeke2:
                         yeekecontact = client.getContact(sender)
                         Xyeeke2 = Pyeekee(yeeke2.group())
+                        print(Xyeeke2)
                         
                         
                     if cmd.startswith("get note"):
